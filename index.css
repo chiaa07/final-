@@ -1,0 +1,95 @@
+p {
+　font-family:Noto Sans TC;
+font-size:50px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:"NotoSansCJKtc-Medium";
+  cursor: none;
+}
+
+body {
+  background-color: #748E54;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+.heading {
+  font-size: 2em;
+  margin: 1em 0;
+  text-align: center;
+}
+.score {
+  font-size: 1.3em;
+  margin: 1em 0;
+  text-align: center;
+}
+.holesCont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+  justify-items: center;
+}
+
+.hole {
+  position: relative;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: #A39171;
+  overflow: hidden;
+}
+.mole {
+  position: absolute;
+  z-index: 1;
+  height: 80px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: appear 0.3s linear;
+  pointer-events: none;
+}
+@keyframes appear {
+  from {
+    bottom: -60px;
+  }
+  to {
+    bottom: 0px;
+  }
+}
+.buttons {
+  margin-top: 4em;
+  text-align: center;
+}
+.buttons button {
+  padding: 15px 45px;
+  background-color: inherit;
+  border: 3px solid #fff;
+  color: #fff;
+  border-radius: 3px;
+  outline: none;
+  font-family:Noto Sans TC;
+  font-size:18px;
+}
+button.stop {
+  display: none;
+  font-family:Noto Sans TC;
+}
+.cursor img {
+  position: absolute;
+  height: 125px;
+  z-index: 2;
+  transform: translate(-10px, -40px);
+  pointer-events: none;
+}
+@keyframes hit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-30deg);
+  }
+}
